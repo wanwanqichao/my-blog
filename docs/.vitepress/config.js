@@ -72,7 +72,7 @@ export default {
         },
       ],
     },
-    socialLinks: [{ icon: "github", link: "https://github.com/mlyz-wdy" }], // 可以连接到 github
+    socialLinks: [{ icon: "github", link: "https://github.com/wanwanqichao/myBlog" }], // 可以连接到 github
   },
 }
 

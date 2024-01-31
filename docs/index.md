@@ -7,7 +7,7 @@ titleTemplate: tom blog
 hero:
   name: myBlog
   text: 看来这就是首页了
-  tagline: emmmmm
+  tagline: tom and jerry
   image:
     src: /logo.png
     alt: Vite
