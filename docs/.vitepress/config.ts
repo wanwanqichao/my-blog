@@ -1,4 +1,5 @@
-export default {
+import { defineConfig } from 'vitepress'
+export default defineConfig({
   title: '码路芽子', // 博客的标题
   description: 'mlyz 的个人博客', // 博客的介绍
   base: '/blog/', // 如果想用 https://mlyz.wdy.github.io/blog/ 访问，那么这句话必填
@@ -72,7 +73,21 @@ export default {
         },
       ],
     },
+    // search: {
+    //   provider: 'algolia',
+    //   options: {
+    //     appId: '...',
+    //     apiKey: '...',
+    //     indexName: '...'
+    //   }
+    // },
+    // algolia: {
+    //   apiKey: '改成你自己的 apiKey 值',
+    //   indexName: '改成你自己的 indexName 值',
+    //   appId: '改成你自己的 appId 值'
+    // },
+    // lastUpdated: true,
     socialLinks: [{ icon: "github", link: "https://github.com/wanwanqichao/myBlog" }], // 可以连接到 github
   },
-}
+})
 
