@@ -1,11 +1,12 @@
 import { defineConfig } from 'vitepress'
-import useNav from './useNav'
-import useSidebar from './useSidebar'
+import { nav } from './router/useNav'
+import { sidebar } from './router/useSidebar'
 export default defineConfig({
     lang: 'en-US',
-    title: '码路芽子', // 博客的标题
-    description: 'mlyz 的个人博客', // 博客的介绍
-    base: '/myBlog/',
+    title: 'Tom的博客',
+    description: '这是tom的博客',
+    base: '/',
+    srcDir: 'src',
     lastUpdated: true,
     cleanUrls: true,
     // head: [
@@ -21,9 +22,17 @@ export default defineConfig({
     // ]
     // ],
     themeConfig: {
-        logo: "/images/logo.png", // 页面上显示的logo
-        nav: useNav(),
-        sidebar: useSidebar(),
+        logo: "/images/logo.png",
+        nav,
+        sidebar,
+        outlineTitle: '本页目录',
+        darkModeSwitchLabel: '切换主题',
+        sidebarMenuLabel: '菜单',
+        returnToTopLabel: '回到顶部',
+        docFooter: {
+            prev: '上一页',
+            next: '下一页'
+        },
         // search: {
         //     provider: 'algolia',
         //     options: {
@@ -37,6 +46,6 @@ export default defineConfig({
             indexName: '改成你自己的 indexName 值',
             appId: '改成你自己的 appId 值'
         },
-        socialLinks: [{ icon: "github", link: "https://github.com/wanwanqichao/myBlog" }], // 可以连接到 github
+        socialLinks: [{ icon: "github", link: "https://github.com/wanwanqichao/myBlog" }],
     },
 })

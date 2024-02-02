@@ -5,11 +5,11 @@ title: tom
 titleTemplate: tom blog
 
 hero:
-  name: myBlog
-  text: 看来这就是首页了
-  tagline: tom and jerry
+  name: 一只土狗
+  text: 土狗的小窝
+  tagline: 钵钵鸡，钵啊钵钵鸡，一元一串的钵钵鸡~
   image:
-    src: /logo.png
+    src: /assets/images/logo.png
     alt: Vite
   actions:
     - theme: brand
