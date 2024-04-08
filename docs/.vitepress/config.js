@@ -1,6 +1,6 @@
 import { defineConfig } from 'vitepress'
-import { nav } from './router/useNav'
-import { sidebar } from './router/useSidebar'
+import nav from './router/useNav'
+import sidebar from './router/useSidebar'
 export default defineConfig({
     lang: 'en-US',
     title: 'Tom的博客',
@@ -9,18 +9,18 @@ export default defineConfig({
     srcDir: 'src',
     lastUpdated: true,
     cleanUrls: true,
-    // head: [
-    // ['meta', { name: 'theme-color', content: '#3c8772' }],
-    // [
-    // 'script',
-    // {
-    // src: 'https://cdn.usefathom.com/script.js',
-    // 'data-site': 'AZBRSFGG',
-    // 'data-spa': 'auto',
-    // defer: ''
-    // }
-    // ]
-    // ],
+    head: [
+        ['meta', { name: 'theme-color', content: '#3c8772' }],
+        [
+            'script',
+            {
+                src: 'https://cdn.usefathom.com/script.js',
+                'data-site': 'AZBRSFGG',
+                'data-spa': 'auto',
+                defer: ''
+            }
+        ]
+    ],
     themeConfig: {
         logo: "/images/logo.png",
         nav,
@@ -33,6 +33,10 @@ export default defineConfig({
             prev: '上一页',
             next: '下一页'
         },
+        footer: {
+            message: '万有引力',
+            copyright: 'Copyright © 2019-present tom'
+        },
         // search: {
         //     provider: 'algolia',
         //     options: {
@@ -41,11 +45,17 @@ export default defineConfig({
         //         indexName: '你的indexName',
         //     }
         // },
-        algolia: {
-            apiKey: '改成你自己的 apiKey 值',
-            indexName: '改成你自己的 indexName 值',
-            appId: '改成你自己的 appId 值'
-        },
+        // algolia: {
+        //     apiKey: '改成你自己的 apiKey 值',
+        //     indexName: '改成你自己的 indexName 值',
+        //     appId: '改成你自己的 appId 值'
+        // },
         socialLinks: [{ icon: "github", link: "https://github.com/wanwanqichao/myBlog" }],
     },
+    markdown: {
+        image: {
+            // 默认禁用图片懒加载
+            lazyLoading: true
+        }
+    }
 })

@@ -1,29 +1,35 @@
-export const nav = [
+const getFirstlink = url => {
+    const [level1, levle2] = url.split('/')
+    const modules = require(`./sidebar/${level1}/${levle2}.js`)
+    return modules.default[0].items[0].link
+}
+
+export default [
     {
-        text: '随笔', link: '/life'
+        text: '随笔', link: '/life/index'
     },
     {
         text: "开发记录", items: [
-            { text: 'vue', link: "/devRecord/vue/" },
-            { text: 'react', link: '/devRecord/react/' },
-            { text: '原生js', link: '/devRecord/js/'  },
-            { text: '其他', link: '/devRecord/other/' },
+            { text: 'vue', link: getFirstlink("devRecord/vue/") },
+            { text: 'react', link: getFirstlink('devRecord/react/') },
+            { text: '原生js', link: getFirstlink('devRecord/javaScript/')  },
+            { text: '其他', link: getFirstlink('devRecord/other/') },
         ]
     },
     {
         text: '待看好文', items: [
-            { text: 'vue', link: '/article/vue/' },
-            { text: 'react', link: '/article/react/' },
-            { text: '原生js', link: '/article/js/' },
-            { text: '其他', link: '/article/other/' },
+            { text: 'vue', link: getFirstlink('articles/vue/') },
+            { text: 'react', link: getFirstlink('articles/react/') },
+            { text: '原生js', link: getFirstlink('articles/javaScript/') },
+            { text: '其他', link: getFirstlink('articles/other/') },
         ]
     },
     {
         text: '收藏夹', items: [
-            { text: 'vue', link: '/favorite/vue/' },
-            { text: 'react', link: '/favorite/react/' },
-            { text: '原生js', link: '/favorite/js/' },
-            { text: '其他', link: '/favorite/other/' },
+            { text: 'vue', link: getFirstlink('favorite/vue/') },
+            { text: 'react', link: getFirstlink('favorite/react/') },
+            { text: '原生js', link: getFirstlink('favorite/javaScript/') },
+            { text: '其他', link: getFirstlink('favorite/other/') },
         ]
     },
     {
