@@ -8,11 +8,15 @@ export default [{
     ],
 },
 {
-    text: "收集汇总",
+    text: "开发记录汇总",
     items: [
         {
-            text: "收集汇总",
-            link: "/devRecord/vue/收集汇总",
+            text: "开发记录汇总",
+            link: "/devRecord/vue/开发记录汇总",
+        },
+        {
+            text: "百度离线地图",
+            link: "/devRecord/vue/百度离线地图",
         },
     ],
 }]

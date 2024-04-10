@@ -12,6 +12,7 @@ pnpm create vite
 + [强制使用pnpm包管理工具](#强制使用pnpm包管理工具)
 + [src别名配置](#src别名配置)
 + [环境变量配置](#环境变量配置)
++ [自动导入vue相关的api](#自动导入vue相关的api)
 
 <h3 id="eslint" style="color:#F56C6C;">eslint</h3>
 
@@ -467,4 +468,46 @@ VITE_APP_BASE_API = '/test-api'
 在项目中可以通过 import.meta.env 的方式获取环境变量 
 :::
 
+
+<h3 id="自动导入vue相关的api" style="color:#F56C6C;">自动导入vue相关的api</h3>
+
+安装插件
+``` js
+npm i unplugin-auto-import -D
+```
+
+配置vite.config.ts
+``` js
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
+import AutoImport from 'unplugin-auto-import/vite'
+ 
+export default defineConfig({
+ 
+  plugins: [vue(),
+    AutoImport({
+      imports: ['vue','vue-router', 'pinia'], // [!code highlight]
+      //注意这个配置和src同级 // [!code highlight]
+      dts: './auto-imports.d.ts' // [!code highlight]
+    })
+  ],
+  base: '/',
+})
+```
+
+::: warning 提示
+配置完成后，运行 npm run dev 命令，会自动在项目根目录位置下生成 auto-imports.d.ts 这个文件
+:::
+
+配置tsconfig.json
+``` js
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "./*.d.ts", 
+    "./auto-imports.d.ts",  // [!code highlight]
+  ]
+```
 
