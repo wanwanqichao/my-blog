@@ -5,7 +5,7 @@ export default defineConfig({
     lang: 'en-US',
     title: 'Tom的博客',
     description: '这是tom的博客',
-    base: '/',
+    base: './',
     srcDir: 'src',
     lastUpdated: true,
     cleanUrls: true,
