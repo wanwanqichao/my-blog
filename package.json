@@ -9,12 +9,15 @@
     "dev": "vitepress dev docs",
     "build": "vitepress build docs",
     "serve": "vitepress serve docs",
-    "docs:deploy": "sh deploy.sh"
+    "deploy": "sh deploy.sh"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "naive-ui": "^2.38.1",
+    "sass": "^1.74.1",
+    "unplugin-auto-import": "^0.17.5",
     "vitepress": "1.1.0"
   }
 }

@@ -1,20 +1,9 @@
-#### vite创建项目
+## vite创建项目
 ``` js
 pnpm create vite
 ```
 
-#### 项目初始相关配置
-+ [eslint](#eslint)
-+ [prettier](#prettier)
-+ [stylelint](#stylelint)
-+ [husky](#husky)
-+ [commitlint](#commitlint)
-+ [强制使用pnpm包管理工具](#强制使用pnpm包管理工具)
-+ [src别名配置](#src别名配置)
-+ [环境变量配置](#环境变量配置)
-+ [自动导入vue相关的api](#自动导入vue相关的api)
-
-<h3 id="eslint" style="color:#F56C6C;">eslint</h3>
+## eslint
 
 安装eslint
 ``` js
@@ -64,7 +53,8 @@ module.exports = {
 :::
 
 安装eslint校验插件
-> 接下来安装vue3环境代码校验的一系列插件，主要解决规则冲突问题和优先级问题等。
+
+接下来安装vue3环境代码校验的一系列插件，主要解决规则冲突问题和优先级问题等。
 ``` js
 pnpm install -D 
     eslint-plugin-import 
@@ -145,14 +135,15 @@ module.exports = {
 dist
 node_modules
 ```
-> 新增针对eslint的package.json运行脚本
+
+新增针对eslint的package.json运行脚本
 
 ``` js
 "lint":"eslint src",
 "fix":"eslint src --fix"
 ```
 
-<h3 id="prettier" style="color:#F56C6C;">prettier</h3>
+## prettier
 
 安装prettier
 ``` js
@@ -183,16 +174,17 @@ pnpm install -D eslint-plugin-prettier prettier eslint-config-prettier
 /public/*
 ```
 
-> 新增针对prettier的package.json运行脚本
+
+新增针对prettier的package.json运行脚本
 
 ``` js
 "format": "prettier --write \"./**/*.{html,vue,ts,js,json,md}\""
 ```
 
 
-<h3 id="stylelint" style="color:#F56C6C;">stylelint</h3>
+## stylelint
 
-> stylelint为css的lint工具。可格式化css代码，检查css语法错误与不合理的写法，指定css书写顺序等。我们的项目中使用scss作为预处理器，安装以下依赖：
+stylelint为css的lint工具。可格式化css代码，检查css语法错误与不合理的写法，指定css书写顺序等。我们的项目中使用scss作为预处理器，安装以下依赖：
 
 安装stylelint
 ``` js
@@ -271,13 +263,14 @@ module.exports = {
 /public/*
 ```
 
-> 新增针对stylelint的package.json运行脚本
+
+新增针对stylelint的package.json运行脚本
 ``` js
 "lint:eslint": "eslint src/**/*.{ts,vue} --cache --fix",
 "lint:style": "stylelint src/**/*.{css,scss,vue} --cache --fix"
 ```
 
-<h3 id="husky" style="color:#F56C6C;">husky</h3>
+## husky
 
 我们虽然已经集成好了代码校验工具，但是需要每次手动的去执行命令才会格式化我们的代码。如果有人没有对代码进行格式化就提交到了远程仓库中，那这个规范显然就没什么用。所以我们需要强制让开发人员按照约定好的代码规范来提交。
 
@@ -296,7 +289,8 @@ pnpm install -D husky
 ``` js
 npx husky-init
 ```
-> 执行完该命令之后，会在根目录下生成个一个.husky目录，在这个目录下面会有一个pre-commit文件，在我们执行git commit的时候会先执行pre-commit文件里面的命令
+
+执行完该命令之后，会在根目录下生成个一个.husky目录，在这个目录下面会有一个pre-commit文件，在我们执行git commit的时候会先执行pre-commit文件里面的命令
 
 配置pre-commit文件
 ``` js 
@@ -305,7 +299,7 @@ npx husky-init
 pnpm run format
 ```
 
-<h3 id="commitlint" style="color:#F56C6C;">commitlint</h3>
+## commitlint
 
 对于我们的commit信息，也是有统一规范的，不能随便写，要让每个人都按照统一的格式填写，对此我们可以利用 commitlint 来实现。
 
@@ -315,7 +309,8 @@ pnpm add @commitlint/config-conventional @commitlint/cli -D
 ```
 
 新建commitlint配置文件
-> 在根目录新建 commitlint.config.cjs 文件，添加如下配置代码
+
+在根目录新建 commitlint.config.cjs 文件，添加如下配置代码
 
 ::: details 查看详情
 ``` js
@@ -351,7 +346,8 @@ module.exports = {
 ```
 :::
 
-> 新增针对commitlint的package.json运行脚本
+
+新增针对commitlint的package.json运行脚本
 ``` js
 "commitlint": "commitlint --config commitlint.config.cjs -e -V"
 ```
@@ -382,13 +378,13 @@ npx husky add .husky/commit-msg
 pnpm commitlint
 ```
 
-> 当我们 commit 提交信息时，就不能再随意写了，必须是 git commit -m 'fix: xxx' 符合类型的才可以。
+当我们 commit 提交信息时，就不能再随意写了，必须是 git commit -m 'fix: xxx' 符合类型的才可以。
 
 ::: danger 注意
 subject的后面需要用英文的冒号 : ，且冒号后面是需要空一格的，这个空格是不能省略的
 :::
 
-<h3 id="强制使用pnpm包管理工具" style="color:#F56C6C;">强制使用pnpm包管理工具</h3>
+## 强制使用pnpm包管理工具
 
 团队开发项目的时候，需要统一包管理器工具，因为不同的包管理器工具下载同一个依赖，可能版本不一样，导致项目出现bug问题，因此包管理器工具需要统一管理
 
@@ -402,14 +398,15 @@ if (!/pnpm/.test(process.env.npm_execpath || '')) {
   process.exit(1)
 }
 ```
-> 新增检测包管理工具的package.json运行脚本
+
+新增检测包管理工具的package.json运行脚本
 ``` js
 "preinstall": "node ./scripts/preinstall.js"
 ```
 
-> 配置完命令之后，当我们使用npm或者yarn来安装包的时候，就会报错了。原理就是在install的时候会触发preinstall（npm提供的生命周期钩子）这个文件里面的代码。
+配置完命令之后，当我们使用npm或者yarn来安装包的时候，就会报错了。原理就是在install的时候会触发preinstall（npm提供的生命周期钩子）这个文件里面的代码。
 
-<h3 id="src别名配置" style="color:#F56C6C;">src别名配置</h3>
+## src别名配置
 
 在vite.config.ts中进行如下配置：
 ``` js
@@ -438,7 +435,7 @@ export default defineConfig({
 }
 ```
 
-<h3 id="环境变量配置" style="color:#F56C6C;">环境变量配置</h3>
+## 环境变量配置
 
 项目开发过程中，至少会经历开发环境、测试环境和生产环境(即正式环境)三个阶段。不同阶段请求的状态(如接口地址等)不尽相同，若手动切换接口地址是相当繁琐且易出错的。于是环境变量配置的需求就应运而生，我们只需做简单的配置，把环境状态切换的工作交给代码完成。
 
@@ -469,7 +466,7 @@ VITE_APP_BASE_API = '/test-api'
 :::
 
 
-<h3 id="自动导入vue相关的api" style="color:#F56C6C;">自动导入vue相关的api</h3>
+## 自动导入vue相关的api
 
 安装插件
 ``` js

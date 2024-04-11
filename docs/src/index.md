@@ -9,7 +9,7 @@ hero:
   text: 土狗的小窝
   tagline: 钵钵鸡，钵啊钵钵鸡，一元一串的钵钵鸡~
   image:
-    src: /assets/images/logo.png
+    src: /images/logo.png
     alt: Vite
   actions:
     - theme: brand

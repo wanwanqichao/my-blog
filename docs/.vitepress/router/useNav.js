@@ -1,7 +1,7 @@
 const getFirstlink = url => {
     const [level1, levle2] = url.split('/')
     const modules = require(`./sidebar/${level1}/${levle2}.js`)
-    return modules.default[0].items[0].link
+    return modules.default[0].items? modules.default[0].items[0].link :modules.default[0].link
 }
 
 export default [

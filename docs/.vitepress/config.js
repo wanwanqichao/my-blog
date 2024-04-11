@@ -1,4 +1,9 @@
 import { defineConfig } from 'vitepress'
+// import vue from '@vitejs/plugin-vue'
+import AutoImport from 'unplugin-auto-import/vite'
+// import Components from 'unplugin-vue-components/vite'
+// import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
+
 import nav from './router/useNav'
 import sidebar from './router/useSidebar'
 export default defineConfig({
@@ -25,7 +30,8 @@ export default defineConfig({
         logo: "/images/logo.png",
         nav,
         sidebar,
-        outlineTitle: '本页目录',
+        outline: [2, 4],
+        outlineTitle: '大纲',
         darkModeSwitchLabel: '切换主题',
         sidebarMenuLabel: '菜单',
         returnToTopLabel: '回到顶部',
@@ -51,6 +57,29 @@ export default defineConfig({
             appId: 'wanwanqichaoio'
         },
         socialLinks: [{ icon: "github", link: "https://github.com/wanwanqichao/myBlog" }],
+    },
+    vite: {
+        plugins: [
+            // vue(),
+            // AutoImport({
+            //   imports: [
+            //         'vue',
+            //         'vue-router',
+            //     'pinia',
+            //     {
+            //       'naive-ui': [
+            //         'useDialog',
+            //         'useMessage',
+            //         'useNotification',
+            //         'useLoadingBar'
+            //       ]
+            //     }
+            //   ]
+            // }),
+            // Components({
+            //   resolvers: [NaiveUiResolver()]
+            // })
+          ]
     },
     markdown: {
         image: {
