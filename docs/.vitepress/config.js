@@ -46,9 +46,9 @@ export default defineConfig({
         //     }
         // },
         algolia: {
-            apiKey: '改成你自己的 apiKey 值',
-            indexName: '改成你自己的 indexName 值',
-            appId: '改成你自己的 appId 值'
+            apiKey: '4WK17UP3BB',
+            indexName: '27558fb63f6d718038f9021fc6c8a11d',
+            appId: 'wanwanqichaoio'
         },
         socialLinks: [{ icon: "github", link: "https://github.com/wanwanqichao/myBlog" }],
     },
