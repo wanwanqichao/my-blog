@@ -15,7 +15,7 @@ git add .
 git commit -m 'deploy'
 
 # 部署到 https://<username>.github.io/<repo>
-git push -f https://github.com/wanwanqichao/myBlog.git master:gh-pages
+git push -f https://github.com/wanwanqichao/tom-blog.git master:gh-pages
 
 # 提交所有代码到github
 cd ../../../
