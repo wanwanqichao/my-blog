@@ -1,14 +1,15 @@
 {
   "name": "my-blog",
   "version": "1.0.0",
-  "description": "",
+  "description": "tom的小窝",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "vitepress dev docs",
+    "dev": "vitepress dev docs --open",
     "build": "vitepress build docs",
-    "serve": "vitepress serve docs"
+    "serve": "vitepress serve docs",
+    "docs:deploy": "sh deploy.sh"
   },
   "keywords": [],
   "author": "",

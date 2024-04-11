@@ -45,11 +45,11 @@ export default defineConfig({
         //         indexName: '你的indexName',
         //     }
         // },
-        // algolia: {
-        //     apiKey: '改成你自己的 apiKey 值',
-        //     indexName: '改成你自己的 indexName 值',
-        //     appId: '改成你自己的 appId 值'
-        // },
+        algolia: {
+            apiKey: '改成你自己的 apiKey 值',
+            indexName: '改成你自己的 indexName 值',
+            appId: '改成你自己的 appId 值'
+        },
         socialLinks: [{ icon: "github", link: "https://github.com/wanwanqichao/myBlog" }],
     },
     markdown: {
