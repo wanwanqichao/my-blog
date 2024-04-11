@@ -43,19 +43,19 @@ export default defineConfig({
             message: '万有引力',
             copyright: 'Copyright © 2019-present tom'
         },
-        // search: {
-        //     provider: 'algolia',
-        //     options: {
-        //         appId: '你的appid',
-        //         apiKey: '你的APIkey，注意是搜索的key',
-        //         indexName: '你的indexName',
-        //     }
-        // },
-        algolia: {
-            apiKey: '4WK17UP3BB',
-            indexName: '27558fb63f6d718038f9021fc6c8a11d',
-            appId: 'wanwanqichaoio'
+        search: {
+            provider: 'local',
+            // options: {
+            //     appId: '你的appid',
+            //     apiKey: '你的APIkey，注意是搜索的key',
+            //     indexName: '你的indexName',
+            // }
         },
+        // algolia: {
+        //     apiKey: '4WK17UP3BB',
+        //     indexName: '27558fb63f6d718038f9021fc6c8a11d',
+        //     appId: 'wanwanqichaoio'
+        // },
         socialLinks: [{ icon: "github", link: "https://github.com/wanwanqichao/myBlog" }],
     },
     vite: {

@@ -1,6 +1,7 @@
-## v-for实现绑定ref数组
+::: warning 提示
+确保存储ref实例的itemRefArr中，避免有重复的ref实例
+:::
 
-::: details 查看详情
 ``` html
 <!-- vue2 -->
 <div  v-for="(item,index) in list" :key="item.id" :ref="item.name"></div>
@@ -10,8 +11,7 @@ console.log(this.$refs)
 <div v-for="(item,index) in list" :key="item.id">
     <div :ref="el => itemRefArr[index] = el"></div>
 </div>
-```
-``` js
+
 const itemRefArr = ref([])
 const list = ref([
     {
@@ -22,8 +22,3 @@ const list = ref([
         name:"ref2"
     }])
 ```
-:::
-
-::: warning 提示
-确保存储ref实例的itemRefArr中，避免有重复的ref实例
-:::
