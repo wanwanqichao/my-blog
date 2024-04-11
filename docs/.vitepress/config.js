@@ -44,17 +44,17 @@ export default defineConfig({
             copyright: 'Copyright © 2019-present tom'
         },
         search: {
-            provider: 'local',
-            // options: {
-            //     appId: '你的appid',
-            //     apiKey: '你的APIkey，注意是搜索的key',
-            //     indexName: '你的indexName',
-            // }
+            provider: 'algolia',
+            options: {
+                apiKey: '27558fb63f6d718038f9021fc6c8a11d',
+                indexName: 'wanwanqichaoio',
+                appId: '4WK17UP3BB'
+            }
         },
         // algolia: {
-        //     apiKey: '4WK17UP3BB',
-        //     indexName: '27558fb63f6d718038f9021fc6c8a11d',
-        //     appId: 'wanwanqichaoio'
+        //     apiKey: '27558fb63f6d718038f9021fc6c8a11d',
+        //     indexName: 'wanwanqichaoio',
+        //     appId: '4WK17UP3BB'
         // },
         socialLinks: [{ icon: "github", link: "https://github.com/wanwanqichao/myBlog" }],
     },
